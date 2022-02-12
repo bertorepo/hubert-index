@@ -1,8 +1,8 @@
 {
   "name": "@berto3231/hubert-index",
-  "version": "2.1.9",
+  "version": "2.1.11",
   "description": "Simple Google Drive Index",
-  "main": "README.md",
+  "main": "./README.md",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
