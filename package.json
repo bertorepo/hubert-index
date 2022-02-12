@@ -1,19 +1,22 @@
 {
-  "name": "@googledrive/index",
-  "version": "2.1.8",
-  "description": "A Google Drive Index to List, Watch and Download Files using a Beautiful UI.",
+  "name": "hubert-index",
+  "version": "2.1.9",
+  "description": "Simple Google Drive Index",
   "main": "README.md",
-  "keywords": [
-    "google-drive-index, bhadoo, bhadoo-drive-index"
-  ],
-  "author": "Parveen Bhadoo",
-  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/ParveenBhadooOfficial/Google-Drive-Index.git"
+    "url": "git+https://github.com/bertorepo/hubert-index.git"
   },
+  "keywords": [
+    "hubert-index"
+  ],
+  "author": "hubert berja",
+  "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/ParveenBhadooOfficial/Google-Drive-Index/issues"
+    "url": "https://github.com/bertorepo/hubert-index/issues"
   },
-  "homepage": "https://gitlab.com/ParveenBhadooOfficial/Google-Drive-Index/-/blob/master/README.md"
+  "homepage": "https://github.com/bertorepo/hubert-index#readme"
 }
