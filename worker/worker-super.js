@@ -23,7 +23,7 @@ const authConfig = {
   siteName: "Bhadoo Drive Index", // Website name
   client_id: "746239575955-oao9hkv614p8glrqpvuh5i8mqfoq145b.apps.googleusercontent.com", // Client id from Google Cloud Console
   client_secret: "u5a1CSY5pNjdD2tGTU93TTnI", // Client Secret from Google Cloud Console
-  refresh_token: "", // Authorize token
+  refresh_token: "1//0eUn78hvyL9LMCgYIARAAGA4SNwF-L9Iru4e2hfjP7fsBuy5qhHjcydJSsupi-iXo8F7cH5Kpcvqgeen_B_sfqwON19GewEB3BXs", // Authorize token
   service_account: false, // true if you're using Service Account instead of user account
   service_account_json: randomserviceaccount, // don't touch this one
   files_list_page_size: 50,
@@ -40,12 +40,12 @@ const authConfig = {
       protect_file_link: false,
       // "auth": {"username":"password"} /* Remove double slash before "auth" to activate id password protection */
     },
-    {
-      id: "root",
-      name: "Drive Two",
-      protect_file_link: false,
-      // "auth": {"username":"password", "username1":"password1"} /* Remove double slash before "auth" to activate id password protection */
-    },
+    // {
+    //   id: "root",
+    //   name: "Drive Two",
+    //   protect_file_link: false,
+    //   // "auth": {"username":"password", "username1":"password1"} /* Remove double slash before "auth" to activate id password protection */
+    // },
   ],
 };
 
@@ -79,9 +79,9 @@ const uiConfig = {
   logo_image: true, // true if you're using image link in next option.
   logo_height: "", // only if logo_image is true
   logo_width: "100px", // only if logo_image is true
-  favicon: "https://cdn.jsdelivr.net/npm/@googledrive/index@2.1.8/images/favicon.ico",
+  favicon: "https://cdn.jsdelivr.net/npm/@berto3231/hubert-index@2.1.11/images/favicon.ico",
   // if logo is true then link otherwise just text for name
-  logo_link_name: "https://cdn.jsdelivr.net/npm/@googledrive/index@2.1.8/images/bhadoo-cloud-logo-white.svg",
+  logo_link_name: "hhttps://cdn.jsdelivr.net/npm/@berto3231/hubert-index@2.1.11/images/bhadoo-cloud-logo-white.svg",
   fixed_header: true, // If you want the footer to be flexible or fixed.
   header_padding: "80", // Value 80 for fixed header, Value 20 for flexible header. Required to be changed accordingly in some themes.
   nav_link_1: "Home", // change navigation link name
@@ -114,9 +114,9 @@ const uiConfig = {
   second_domain_for_dl: false, // If you want to display other URL for Downloading to protect your main domain.
   downloaddomain: domain_for_dl, // Ignore this and set domains at top of this page after service accounts.
   videodomain: video_domain_for_dl, // Ignore this and set domains at top of this page after service accounts.
-  poster: "https://cdn.jsdelivr.net/npm/@googledrive/index@2.1.8/images/poster.jpg", // Video poster URL or see Readme to how to load from Drive
-  audioposter: "https://cdn.jsdelivr.net/npm/@googledrive/index@2.1.8/images/music.jpg", // Video poster URL or see Readme to how to load from Drive
-  jsdelivr_cdn_src: "https://cdn.jsdelivr.net/npm/@googledrive/index", // If Project is Forked, then enter your GitHub repo
+  poster: "https://cdn.jsdelivr.net/npm/@berto3231/hubert-index@2.1.11/images/poster.jpg", // Video poster URL or see Readme to how to load from Drive
+  audioposter: "https://cdn.jsdelivr.net/npm/@berto3231/hubert-index@2.1.11/images/music.jpg", // Video poster URL or see Readme to how to load from Drive
+  jsdelivr_cdn_src: "https://cdn.jsdelivr.net/npm/@berto3231/hubert-index", // If Project is Forked, then enter your GitHub repo
   render_head_md: true, // Render Head.md
   render_readme_md: true, // Render Readme.md
   display_drive_link: false, // This will add a Link Button to Google Drive of that particular file.

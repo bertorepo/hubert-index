@@ -9,6 +9,7 @@ function init() {
 </header>
 <div>
 <div id="content" style="padding-top: ${UI.header_padding}px;${UI.fixed_footer ? " padding-bottom: clamp(170px, 100%, 300px);" : ""}">
+
 </div>
 <div class="modal fade" id="SearchModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="SearchModelLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -359,6 +360,13 @@ function requestSearch(params, resultCallback) {
 // Render file list
 function list(path) {
   var content = `<div class="container">${UI.fixed_header ? "<br>" : ""}
+
+  <div class="text-center p-2">
+    <img src="${UI.image_header}" class="img-fluid" alt="image_header"><br/>
+    <p mt-1>A Gift of Lifetime Learning!</p>
+    </div>
+
+    
   <div id="update"></div>
     <div id="head_md" style="display:none; padding: 20px 20px;"></div>
     <div class="${UI.path_nav_alert_class} d-flex align-items-center" role="alert" style="margin-bottom: 0; padding-bottom: 0rem;">
@@ -395,7 +403,11 @@ function list(path) {
   </div>
     <div id="list" class="list-group text-break">
     </div>
-    <div class="${UI.file_count_alert_class} text-center d-none" role="alert" id="count">Total <span class="number text-center"></span> items</div>
+    <div class="text-secondary p-3 text-center" role="alert" id="count">
+    <h3>THIS FILES BELONG TO <b> UNLILEARNING_PH TEAM </b></h3>
+    </div>
+
+
     <div id="readme_md" style="display:none; padding: 20px 20px;"></div>
     </div>
     `;
