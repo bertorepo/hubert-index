@@ -28,13 +28,13 @@ function init() {
   </div>
 </div>
 <br>
-<footer class="footer mt-auto py-3 text-muted ${UI.footer_style_class}" style="${UI.fixed_footer ? "position: fixed; " : ""}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;${
+<footer class="footer mt-auto text-center py-2 text-muted ${UI.footer_style_class}" style="${UI.fixed_footer ? "position: fixed; " : ""}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;${
     UI.hide_footer ? " display:none;" : " display:block;"
-  }"> <div class="container" style="width: auto; padding: 0 10px;"> <p class="float-end"> <a href="#">Back to top</a> </p> ${
+  }"> <div class="container" style="width: auto; padding: 0 8px;"> ${
     UI.credit
-      ? '<p>Redesigned with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg> by <a href="https://www.npmjs.com/package/@googledrive/index" target="_blank">TheFirstSpeedster</a>, based on Open Source Softwares.</p>'
+      ? '<p class="text-muted">Designed with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="#d33682" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg> by Hubert Lemuel, based on Open Source Softwares.</p>'
       : ""
-  } <p>© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
+  } <p class="text-muted">© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
   `;
   $("body").html(html);
 }
@@ -155,7 +155,7 @@ function nav(path) {
   var drive_name = window.drive_names[cur];
 
   // Dropdown to select different drive roots.
-  html += `<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${drive_name}</a><div class="dropdown-menu" aria-labelledby="navbarDropdown">`;
+  html += `<li class="d-none nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${drive_name}</a><div class="dropdown-menu" aria-labelledby="navbarDropdown">`;
   names.forEach((name, idx) => {
     html += `<a class="dropdown-item"  href="/${idx}:/">${name}</a>`;
   });
@@ -361,9 +361,8 @@ function requestSearch(params, resultCallback) {
 function list(path) {
   var content = `<div class="container">${UI.fixed_header ? "<br>" : ""}
 
-  <div class="text-center p-2">
-    <img src="${UI.image_header}" class="img-fluid" alt="image_header"><br/>
-    <p mt-1>A Gift of Lifetime Learning!</p>
+  <div class="text-center pb-2">
+    <img src="${UI.image_header}" class="img-fluid" width="500px" alt="image_header"><br/>
     </div>
 
     
@@ -404,7 +403,9 @@ function list(path) {
     <div id="list" class="list-group text-break">
     </div>
     <div class="text-secondary p-3 text-center" role="alert" id="count">
-    <h3>THIS FILES BELONG TO <b> UNLILEARNING_PH TEAM </b></h3>
+    <h5 class="text-muted mb-0">All Files Belongs to <br/> <b style="color:#ff66c4"> UNLI LEARNING_PH TEAM </b>
+    </h5>
+    <p style="color:rgba(255,255,255,.4)">Non-Members are not allowed to access!</p>
     </div>
 
 
@@ -589,7 +590,7 @@ function append_files_to_list(path, files) {
         UI.display_download
           ? `<a href="${p}"><svg class="float-end"width="25px" style="margin-left: 8px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path> </svg></a>`
           : ``
-      }${UI.display_size ? `<span class="badge bg-primary float-end"> ` + item["size"] + ` </span>` : ``}${UI.display_time ? ` <span class="badge bg-info float-end"> ` + item["modifiedTime"] + ` </span>` : ``}</div>`;
+      }${UI.display_size ? `<span class="badge bg-danger float-end"> ` + item["size"] + ` </span>` : ``}${UI.display_time ? ` <span class="badge bg-info float-end"> ` + item["modifiedTime"] + ` </span>` : ``}</div>`;
     }
   }
 
@@ -794,7 +795,7 @@ function append_search_result_to_list(files) {
         html += `<svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 32 32"><g transform="translate(0 -1020.362)"><g transform="translate(-.5)"><g transform="translate(.5)"><path style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;white-space:normal;isolation:auto;mix-blend-mode:normal;solid-color:#000;solid-opacity:1" fill="#4989b8" d="M 4,2 4,31 27,31 27,7.9941406 21.007812,2 20.800781,2 4,2 Z M 5,3 6,3 6,4 5,4 5,3 Z M 7,3 8,3 8,4 7,4 7,3 Z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z M 5,5 6,5 6,6 5,6 5,5 Z M 5,7 6,7 6,8 5,8 5,7 Z m 0,2 1,0 0,1 -1,0 0,-1 z m 20,0 1,0 0,1 -1,0 0,-1 z m -20,2 1,0 0,1 -1,0 0,-1 z m 20,0 1,0 0,1 -1,0 0,-1 z m -20,2 1,0 0,1 -1,0 0,-1 z m 20,0 1,0 0,1 -1,0 0,-1 z m -20,2 1,0 0,1 -1,0 0,-1 z m 20,0 1,0 0,1 -1,0 0,-1 z m -20,2 1,0 0,1 -1,0 0,-1 z m 20,0 1,0 0,1 -1,0 0,-1 z m -20,2 1,0 0,1 -1,0 0,-1 z m 20,0 1,0 0,1 -1,0 0,-1 z m -20,2 1,0 0,1 -1,0 0,-1 z m 20,0 1,0 0,1 -1,0 0,-1 z m -20,2 1,0 0,1 -1,0 0,-1 z m 20,0 1,0 0,1 -1,0 0,-1 z m -20,2 1,0 0,1 -1,0 0,-1 z m 20,0 1,0 0,1 -1,0 0,-1 z m -20,2 1,0 0,1 -1,0 0,-1 z m 20,0 1,0 0,1 -1,0 0,-1 z m -20,2 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z m 2,0 1,0 0,1 -1,0 0,-1 z" color="#000" enable-background="accumulate" font-family="sans-serif" font-weight="400" overflow="visible" transform="translate(0 1020.362)"/><path style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;white-space:normal;isolation:auto;mix-blend-mode:normal;solid-color:#000;solid-opacity:1" fill="#4e4e4e" fill-rule="evenodd" d="m 27.000003,1028.3562 -5.992006,-5.9941 -0.0019,5.9941 z" color="#000" enable-background="accumulate" font-family="sans-serif" font-weight="400" overflow="visible"/></g><path style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;white-space:normal;isolation:auto;mix-blend-mode:normal;solid-color:#000;solid-opacity:1" fill="#4e4e4e" d="m 9.5000015,1023.3622 0,20 2.4999985,-4 2.499999,4 0,-20 0,-1 -4.9999975,0 z" color="#000" enable-background="accumulate" font-family="sans-serif" font-weight="400" overflow="visible"/></g></g></svg>`;
       }
 
-      html += ` ${item.name}<span class="badge float-end csize"> ${UI.display_size ? `<span class="badge bg-primary float-end"> ` + item["size"] + ` </span>` : ``}${
+      html += ` ${item.name}<span class="badge float-end csize"> ${UI.display_size ? `<span class="badge bg-danger float-end"> ` + item["size"] + ` </span>` : ``}${
         UI.display_time ? ` <span class="badge bg-info float-end"> ` + item["modifiedTime"] + ` </span>` : ``
       }</a>`;
     }
@@ -936,6 +937,7 @@ function file_others(path) {
   <div class="${UI.file_view_alert_class}" id="file_details" role="alert">${obj.name}<br>${size}</div>
 </div>
 <div class="card-body">
+<p class="text-muted text-center lead p-1">Click Button Below to Download!</p>
 <div class="d-none input-group mb-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="">Full URL</span>
@@ -945,8 +947,8 @@ function file_others(path) {
   <div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/' + obj.id + '/view" id ="file_drive_link" target="_blank">GD Link</a>' : ""}
   <div class="btn-group text-center">
-      <a href="${url}" type="button" class="btn btn-primary">Download</a>
-      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a href="${url}" type="button" class="${UI.donwload_btn_class}">Download</a>
+      <button type="button" class="${UI.donwload_btn_class} dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only"></span>
       </button>
       <div class="dropdown-menu">
@@ -955,7 +957,6 @@ function file_others(path) {
         <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.plus/idm.internet.download.manager.Downloader;S.title=${decodename};end">1DM+ (Plus)</a>
       </div>
   </div>
-  <button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button>
   </div>
   <br></div>`;
       }
@@ -1014,6 +1015,7 @@ function file_code(path) {
 </div>
 </div>
 <div class="card-body">
+<p class="text-muted text-center lead p-1">Click Button Below to Download!</p>
 <div class="d-none input-group mb-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="">Full URL</span>
@@ -1023,8 +1025,8 @@ function file_code(path) {
   <div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/' + obj.id + '/view" id ="file_drive_link" target="_blank">GD Link</a>' : ""}
   <div class="btn-group text-center">
-      <a href="${url}" type="button" class="btn btn-primary">Download</a>
-      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a href="${url}" type="button" class="${UI.donwload_btn_class}">Download</a>
+      <button type="button" class="${UI.donwload_btn_class} dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only"></span>
       </button>
       <div class="dropdown-menu">
@@ -1033,7 +1035,7 @@ function file_code(path) {
         <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.plus/idm.internet.download.manager.Downloader;S.title=${decodename};end">1DM+ (Plus)</a>
       </div>
   </div>
-  <button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button></div><br></div>
+  </div><br></div>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.js" integrity="sha256-fZOd7N/oofoKcO92RzxvC0wMm+EvsKyRT4nmcmQbgzU=" crossorigin="anonymous"></script>
 `;
     } catch (err) {
@@ -1114,6 +1116,8 @@ ${
     ? ``
     : `
 <div class="card-body">
+<p class="text-muted text-center lead p-1">Click Button Below to Download!</p>
+<div class="btn-group text-center">
 <div class="d-none input-group mb-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="">Full URL</span>
@@ -1121,9 +1125,8 @@ ${
   <input type="text" class="form-control" id="dlurl" value="${url}">
 </div>
 ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/' + obj.id + '/view" id ="file_drive_link" target="_blank">GD Link</a>' : ""}
-<div class="btn-group text-center">
-    <a href="${url}" type="button" class="btn btn-primary">Download</a>
-    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a href="${url}" type="button" class="${UI.donwload_btn_class}">Download</a>
+    <button type="button" class="${UI.donwload_btn_class} dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="sr-only"></span>
     </button>
     <div class="dropdown-menu">
@@ -1141,7 +1144,6 @@ ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://d
       <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.plus/idm.internet.download.manager.Downloader;S.title=${decodename};end">1DM+ (Plus)</a>
     </div>
 </div>
-<button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button>
 <br>
   </div>
   </div>
@@ -1195,6 +1197,7 @@ function file_audio(path) {
    const player = new Plyr('#vplayer');
   </script></br>
   <div class="card-body">
+  <p class="text-muted text-center lead p-1">Click Button Below to Download!</p>
 <div class="d-none input-group mb-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="">Full URL</span>
@@ -1204,8 +1207,8 @@ function file_audio(path) {
   <div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/' + obj.id + '/view" id ="file_drive_link" target="_blank">GD Link</a>' : ""}
   <div class="btn-group text-center">
-      <a href="${url}" type="button" class="btn btn-primary">Download</a>
-      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a href="${url}" type="button" class="${UI.donwload_btn_class}">Download</a>
+      <button type="button" class="${UI.donwload_btn_class} dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only"></span>
       </button>
       <div class="dropdown-menu">
@@ -1214,7 +1217,7 @@ function file_audio(path) {
         <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.plus/idm.internet.download.manager.Downloader;S.title=${decodename};end">1DM+ (Plus)</a>
       </div>
   </div>
-  <button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button></div><br>
+  </div><br>
   </div>
   </div>
   </div>
@@ -1324,6 +1327,7 @@ function file_pdf(path) {
   <canvas id="the-canvas" style="max-width: 100%;"></canvas>
   </div>
   <div class="card-body">
+  <p class="text-muted text-center lead p-1">Click Button Below to Download!</p>
 <div class="d-none input-group mb-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="">Full URL</span>
@@ -1333,8 +1337,8 @@ function file_pdf(path) {
   <div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/' + obj.id + '/view" id ="file_drive_link" target="_blank">GD Link</a>' : ""}
   <div class="btn-group text-center">
-      <a href="${url}" type="button" class="btn btn-primary">Download</a>
-      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a href="${url}" type="button" class="${UI.donwload_btn_class}">Download</a>
+      <button type="button" class="${UI.donwload_btn_class} dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only"></span>
       </button>
       <div class="dropdown-menu">
@@ -1343,7 +1347,7 @@ function file_pdf(path) {
         <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.plus/idm.internet.download.manager.Downloader;S.title=${decodename};end">1DM+ (Plus)</a>
       </div>
   </div>
-  <button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button></div><br>
+</div><br>
   </div>
   </div>
   </div>
@@ -1431,6 +1435,7 @@ function file_image(path) {
   <img src="${url}" width="50%">
   </div>
   <div class="card-body">
+  <p class="text-muted text-center lead p-1">Click Button Below to Download!</p>
 <div class="d-none input-group mb-4">
   <div class="input-group-prepend">
     <span class="input-group-text" id="">Full URL</span>
@@ -1440,8 +1445,8 @@ function file_image(path) {
   <div class="card-text text-center">
   ${UI.display_drive_link ? '<a type="button" class="btn btn-info" href="https://drive.google.com/file/d/' + obj.id + '/view" id ="file_drive_link" target="_blank">GD Link</a>' : ""}
   <div class="btn-group text-center">
-      <a href="${url}" type="button" class="btn btn-primary">Download</a>
-      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a href="${url}" type="button" class="${UI.donwload_btn_class}">Download</a>
+      <button type="button" class="${UI.donwload_btn_class} dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only"></span>
       </button>
       <div class="dropdown-menu">
@@ -1450,7 +1455,7 @@ function file_image(path) {
         <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.plus/idm.internet.download.manager.Downloader;S.title=${decodename};end">1DM+ (Plus)</a>
       </div>
   </div>
-  <button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button></div><br>
+</div><br>
   </div>
   </div>
   </div>

@@ -231,7 +231,7 @@ const homepage = `<!DOCTYPE html>
       <div>
          <div id="content" style="padding-top: ${uiConfig.header_padding}px;">
             <div class="container">
-               <div class="alert alert-primary d-flex align-items-center" role="alert" style="margin-bottom: 0; padding-bottom: 0rem;">
+               <div class="alert alert-danger d-flex align-items-center" role="alert" style="margin-bottom: 0; padding-bottom: 0rem;">
                   <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                      <ol class="breadcrumb" id="folderne">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -241,7 +241,11 @@ const homepage = `<!DOCTYPE html>
                <div id="list" class="list-group text-break">
 
                </div>
-               <div class="${uiConfig.file_count_alert_class} text-center" role="alert" id="count">Total <span id="n_drives" class="number text-center"></span> drives</div>
+               <div class="text-secondary p-3 text-center" role="alert" id="count">
+                  <h3>All Files Belong to <b style="color:#ff66c4"> UNLILEARNING_PH TEAM </b>
+                    <p style="color:rgba(255,255,255,.55)">Non-Members are not allowed to access!</p>
+                  </h3>
+                </div>
             </div>
          </div>
          <div class="modal fade" id="SearchModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="SearchModelLabel" aria-hidden="true">
@@ -261,13 +265,6 @@ const homepage = `<!DOCTYPE html>
             </div>
          </div>
          <br>
-         <footer class="footer mt-auto py-3 text-muted ${uiConfig.footer_style_class}" style="${uiConfig.fixed_footer ? "position: fixed; " : ""}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;${
-  uiConfig.hide_footer ? " display:none;" : " display:block;"
-}"> <div class="container" style="width: auto; padding: 0 10px;"> <p class="float-end"> <a href="#">Back to top</a> </p> ${
-  uiConfig.credit
-    ? '<p>Redesigned with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" /> </svg> by <a href="https://www.npmjs.com/package/@googledrive/index" target="_blank">TheFirstSpeedster</a>, based on Open Source Softwares.</p>'
-    : ""
-} <p>© ${uiConfig.copyright_year} - <a href=" ${uiConfig.company_link}" target="_blank"> ${uiConfig.company_name}</a>, All Rights Reserved.</p> </div> </footer>
       </div>
    </body>
   <script src="${uiConfig.jsdelivr_cdn_src}@${uiConfig.version}/assets/homepage.min.js"></script>
